@@ -5,7 +5,9 @@ import {bundle} from '@remotion/bundler';
 import {renderMedia, selectComposition} from '@remotion/renderer';
 
 const test = process.argv.includes('--test');
+const is4k = process.argv.includes('--4k');
 const testFrames = 12;
+
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
 const composition = await selectComposition({
   serveUrl,
@@ -13,23 +15,28 @@ const composition = await selectComposition({
 });
 
 const total = composition.durationInFrames;
+const label = is4k ? '4k' : '1080p';
+const scale = is4k ? 2 : 1;
+const crf = is4k ? 16 : 18;
 const outputLocation = path.resolve(
-  test ? 'out/test-4k.mp4' : 'out/apple-explainer-4k.mp4',
+  test ? `out/test-${label}.mp4` : `out/apple-explainer-${label}.mp4`,
 );
 const concurrency = Math.max(
   1,
   Number(process.env.CONCURRENCY || Math.min(4, os.cpus().length)),
 );
-const scale = 2;
 
 fs.mkdirSync(path.dirname(outputLocation), {recursive: true});
 
 console.log('==============================================');
-console.log(`Remotion 4K render${test ? ' (TEST)' : ''}`);
+console.log(`Remotion ${is4k ? '4K' : '1080p'} render${test ? ' (TEST)' : ''}`);
 console.log(`Composition : ${composition.id}`);
 console.log(`Frames      : ${test ? testFrames : total}`);
 console.log(`Output      : ${outputLocation}`);
-console.log(`Scale       : ${scale} → ${composition.width * scale}×${composition.height * scale}`);
+console.log(
+  `Resolution  : ${composition.width * scale}×${composition.height * scale}`,
+);
+console.log(`Codec       : H.264 CRF ${crf}, AAC 320 kbps`);
 console.log(`Concurrency : ${concurrency}`);
 console.log('==============================================');
 
@@ -42,7 +49,7 @@ await renderMedia({
   serveUrl,
   outputLocation,
   codec: 'h264',
-  crf: 16,
+  crf,
   pixelFormat: 'yuv420p',
   audioCodec: 'aac',
   audioBitrate: '320k',

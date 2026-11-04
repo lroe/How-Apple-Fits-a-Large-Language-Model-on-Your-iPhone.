@@ -44,19 +44,20 @@ out/preview-sheet.png    57-frame overview contact sheet
 
 The production timing sheet is at `../storyboard.md`.
 
-## 4K render (Colab)
+## 1080p render (Colab)
 
-Open `colab_render.ipynb` in Colab. It clones the private repo with a GitHub token and runs `render-4k.mjs`.
+Open `colab_render.ipynb` in Colab. The repo is public, so it clones directly with **no token** and runs `render.mjs`.
 
-- Output: **3840×2160**, 30 fps, H.264 CRF 16, AAC 320 kbps
+- Output: **1920×1080**, 30 fps, H.264 CRF 18, AAC 320 kbps
 - Every completed frame prints as `[frame 00000/21965] ... %`
-- A 12-frame 4K test runs first
-- Rendering is CPU-heavy; expect **2–6 hours** on a free Colab CPU runtime and less on High-RAM / more vCPUs
+- A 12-frame 1080p test runs first
+- Rendering is CPU-heavy; expect **1–3 hours** on a free Colab CPU runtime and less on High-RAM / more vCPUs
+- Need 4K later? Run `node render.mjs --4k` (larger file, slower render)
 
 Command used under the hood:
 
 ```bash
-CONCURRENCY=4 node render-4k.mjs
+CONCURRENCY=4 node render.mjs
 ```
 
 ## Reading pass

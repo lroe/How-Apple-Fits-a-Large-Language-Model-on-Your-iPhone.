@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "studio": "remotion studio src/index.ts --port 3000",
-    "render:4k": "node render-4k.mjs",
-    "render:4k:test": "node render-4k.mjs --test",
+    "render": "node render.mjs",
+    "render:test": "node render.mjs --test",
+    "render:4k": "node render.mjs --4k",
+    "render:4k:test": "node render.mjs --test --4k",
     "still": "remotion still src/index.ts AppleExplainer",
     "typecheck": "tsc --noEmit"
   },
