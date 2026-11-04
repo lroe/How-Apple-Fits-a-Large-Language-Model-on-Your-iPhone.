@@ -25,17 +25,37 @@
   <!-- dynamic island -->
   <rect x="465" y="94" width="80" height="23" rx="11.5" fill="#000000" stroke="#1B1B1B" stroke-width="1.5"/>
   <circle cx="530" cy="105.5" r="4" fill="#2A2A2A"/>
-  <!-- chip motif -->
-  <g stroke="#F6F6F6" fill="none" stroke-width="2.2">
-    <rect x="452" y="300" width="106" height="106" rx="16"/>
-    <path d="M478 300 V276 M505 300 V276 M532 300 V276 M478 406 V430 M505 406 V430 M532 406 V430 M452 326 H428 M452 353 H428 M452 380 H428 M558 326 H582 M558 353 H582 M558 380 H582"/>
-    <path d="M476 326 H534 V380 H476 Z" opacity="0.45"/>
-    <path d="M476 326 L505 353 L534 326 M476 380 L505 353 L534 380" opacity="0.45"/>
+  <!-- neural network + bigger chip -->
+  <g fill="none" stroke="#F6F6F6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- outer constellation links -->
+    <path d="M505 195 L415 215 L370 300 L366 405 L425 505 L505 525 L585 505 L644 405 L640 300 L595 215 Z" stroke-width="1.8" opacity="0.55"/>
+    <!-- spokes from nodes to chip pins -->
+    <path d="M505 195 V237 M415 215 L460 237 M595 215 L550 237 M370 300 L389 308 M366 405 L389 398 M640 300 L621 308 M644 405 L621 398 M425 505 L460 469 M505 525 V469 M585 505 L550 469" stroke-width="2" opacity="0.85"/>
+    <!-- chip body -->
+    <rect x="415" y="263" width="180" height="180" rx="24" stroke-width="3"/>
+    <rect x="439" y="287" width="132" height="132" rx="14" stroke-width="2" opacity="0.65"/>
+    <path d="M439 287 L571 419 M571 287 L439 419" stroke-width="1.8" opacity="0.35"/>
+    <!-- pins -->
+    <path d="M460 263 V237 M505 263 V237 M550 263 V237 M460 443 V469 M505 443 V469 M550 443 V469 M415 308 H389 M415 353 H389 M415 398 H389 M595 308 H621 M595 353 H621 M595 398 H621" stroke-width="2.6"/>
   </g>
-  <g fill="#FFFFFF">
-    <circle cx="477" cy="327" r="4"/><circle cx="505" cy="353" r="4"/><circle cx="533" cy="327" r="4"/>
-    <circle cx="477" cy="380" r="4"/><circle cx="533" cy="380" r="4"/>
+  <!-- active signal path -->
+  <path d="M505 195 V237" stroke="#D7192D" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M640 300 L621 308" stroke="#D7192D" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- nodes -->
+  <g fill="#F6F6F6">
+    <circle cx="415" cy="215" r="5.5"/>
+    <circle cx="595" cy="215" r="5.5"/>
+    <circle cx="370" cy="300" r="5.5"/>
+    <circle cx="366" cy="405" r="5.5"/>
+    <circle cx="644" cy="405" r="5.5"/>
+    <circle cx="425" cy="505" r="5.5"/>
+    <circle cx="505" cy="525" r="5.5"/>
+    <circle cx="585" cy="505" r="5.5"/>
   </g>
+  <circle cx="505" cy="195" r="7" fill="#D7192D"/>
+  <circle cx="640" cy="300" r="7" fill="#D7192D"/>
+  <!-- chip core -->
+  <circle cx="505" cy="353" r="7" fill="#F6F6F6"/>
   <!-- side buttons -->
   <rect x="308" y="190" width="8" height="52" rx="4" fill="#C2C2C2"/>
   <rect x="308" y="258" width="8" height="78" rx="4" fill="#C2C2C2"/>
