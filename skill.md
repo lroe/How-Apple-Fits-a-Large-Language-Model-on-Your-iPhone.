@@ -17,10 +17,15 @@ Generates storyboards, timing sheets, visual scripts, and production prompts mat
   * Font Style: Clean handwritten sans or casual lettering (e.g., Caveat, Patrick Hand).
   * Word Density: Maximum 1–5 words per callout. Never transcribe full narration onto screen.
   * Placement: Positioned directly above, below, or adjacent to the associated visual anchor.
-  * **No grey text:** Secondary labels, eyebrows, and subtitles must stay dark charcoal (`#1A1A1A` at 80–100% opacity, or `#3D3A35`). Never use light grey or washed-out text; it reads as disabled and disappears on projectors.
-  * **No top-left scene headings:** Do not repeat the narration as a title + subtitle at the top of content scenes. The narration carries the sentence; the diagram carries short functional labels only. This avoids the “read top-left, then look center” eye ping-pong.
-  * **Chapter cards are the only exception:** a chapter number + a single motif may be used as a full-screen transition. Keep them sparse and never add a paragraph.
-  *
+  * **Type scale (hard rule, 1920×1080):**
+    * Hero words / key numbers: **120–220 px**.
+    * Primary diagram labels: **80–120 px**. Hard floor: **64 px**.
+    * Secondary/context lines: **40–56 px**. Hard floor: **36 px**.
+    * Never shrink a label below the floor to make it fit. Cut words, split the line, or simplify the diagram instead.
+    * Test every scene at **50% scale** (960×540). If a label is not instantly readable at that size, it is too small.
+* **No grey text:** Secondary labels, eyebrows, and subtitles must stay dark charcoal (`#1A1A1A` at 80–100% opacity, or `#3D3A35`). Never use light grey or washed-out text; it reads as disabled and disappears on projectors.
+* **No top-left scene headings:** Do not repeat the narration as a title + subtitle at the top of content scenes. The narration carries the sentence; the diagram carries short functional labels only. This avoids the “read top-left, then look center” eye ping-pong.
+* **Chapter cards are the only exception:** a chapter number + a single motif may be used as a full-screen transition. Keep them sparse and never add a paragraph.
 
 ---
 
@@ -57,11 +62,16 @@ Generates storyboards, timing sheets, visual scripts, and production prompts mat
 
 ## 4. Composition & Negative Space
 
-* **Negative Space:** Keep 60%–80% of the canvas empty at all times.
+* **Negative Space:** Keep 60%–80% of the canvas empty **as breathing room around one large focal composition — never by shrinking the subject into a corner.**
 * **Groundline / Baseline:** Anchor figures and buildings to an uninterrupted bottom horizontal guideline.
 * **Focal Point Isolation:** Keep 1 active focus zone per beat (left, center, or right). Do not animate multiple unrelated quadrants simultaneously.
 * **Transitions:** Short fade through white (4–6 frames), lateral pan along the groundline, or sudden clear-to-white. No left-to-right wipes, flashy zooms, or rotations.
-* keep font size big
+* **Text is a primary visual, not a caption:** Labels should feel like part of the diagram, not fine print underneath it. Size them to be read at phone size, not just on a desktop monitor.
+* **Use the space you have:** When a scene has only one or two elements, scale the drawing and its labels up. A small object floating in a large empty canvas is not minimalism; it is wasted space. Let the active composition occupy roughly 60–75% of the canvas width.
+* **Scale labels to their anchor:** A short label under a shape should be roughly **20–25% of that shape's height** (subject to the hard floor above) and should fill **60–80% of its available width band**. Do not leave a tiny word under a big object.
+* **Small text is a bug, not restraint:** If a label reads like a footnote, it is too small. Increase it before adding more decoration or more whitespace.
+* **2-second readability test:** At the end of a scene, every label should be readable in about 2 seconds. If the viewer has to lean in, the type is too small.
+* **Calibration example:** In the two-wall scene, `space` / `speed` at 54 px read as footnotes; they should be **88–96 px**. The line `memory size, and how fast data moves` at 31 px should be **40–44 px**.
 
 ---
 
