@@ -63,14 +63,14 @@
 | 46 | 09:02.5–09:18.1 | Many experts, a few awake | Once it arrives, a separate, larger server model | Expert grid, three awake experts feed three parallel tracks. | prompt · experts · parallel tracks · pick a few |
 | 47 | 09:18.1–09:23.3 | Two gears | So the system has two gears. | Phone gear meshing with cloud gear. | phone · cloud · when you can · when you must |
 | 48 | 09:23.3–09:37.0 | New in 2026 | Now, what's new in 2026? | Two AFM3 cards and a 2026 calendar. | AFM3 Core 3B · Core Advanced |
-| 49 | 09:37.0–09:54.5 | Dense vs sparse | Core Advanced is a sparse model. | Dense all-on grid vs sparse grid with three awake experts. | dense: every token · sparse: a few experts wake |
-| 50 | 09:54.5–10:01.4 | A hospital of experts | The rest just sit idle. | Hospital with many windows; three sage windows lit. | hundreds inside · two or three doctors |
+| 49 | 09:37.0–09:56.0 | Dense vs sparse | Core Advanced is a sparse model. | Dense all-on grid vs sparse grid with three awake experts. | dense: every token · sparse: a few experts wake |
+| 50 | 09:56.0–10:01.4 | A hospital of experts | It's like a big hospital with hundreds of | Hospital with many windows; three sage windows lit. | hundreds inside · two or three doctors |
 | 51 | 10:01.4–10:14.5 | Big model, small bill | Core Advanced has 20 billion parameters in total, | 20B total bar vs 1–4B active bar; expert grid. | 20B total · 1–4B awake · Apple Silicon budget |
 | 52 | 10:14.5–10:26.5 | Load only what you need | The storage side is clever too. | Flash grid with only three experts loaded into memory. | flash storage · phone memory · per prompt, not per token |
-| 53 | 10:26.5–10:31.7 | The basement library | Think of a huge library in the basement, | Basement bookshelf; a few books on the desk. | a few books · the desk |
-| 54 | 10:31.7–10:39.3 | Google Cloud joins in | The cloud side grew as well. | Cloud with NVIDIA GPU server and Google Cloud label. | Private Cloud Compute · NVIDIA GPU · Google Cloud |
-| 55 | 10:39.3–10:58.5 | Match power to the job | Zoom out and there's one idea underneath all | Phone, stronger device, cloud in one resource ladder. | small phone · stronger device · cloud · system adapts |
-| 56 | 10:58.5–11:44.5 | Six things to remember | So what can you take from this for | Six recap cards with active sage highlight. | six numbered cards, one sage active |
+| 53 | 10:26.5–10:32.1 | The basement library | Think of a huge library in the basement, | Basement bookshelf; a few books on the desk. | a few books · the desk |
+| 54 | 10:32.1–10:39.3 | Google Cloud joins in | The cloud side grew as well. | Cloud with NVIDIA GPU server and Google Cloud label. | Private Cloud Compute · NVIDIA GPU · Google Cloud |
+| 55 | 10:39.3–10:58.8 | Match power to the job | Zoom out and there's one idea underneath all | Phone, stronger device, cloud in one resource ladder. | small phone · stronger device · cloud · system adapts |
+| 56 | 10:58.8–11:44.5 | Six things to remember | So what can you take from this for | Six recap cards with active sage highlight. | six numbered cards, one sage active |
 | 57 | 11:44.5–12:12.2 | Look for waste | To wrap up, Apple didn't get a language | Phone, waste bin, cut list; final “Look for waste.” card. | no big secret · smaller weights · slimmer cache · safe cloud path · Look for waste. |
 
 ## QA checklist
@@ -79,6 +79,7 @@
 - Focal elements share fixed margins; no title/callout sits on a diagram edge.
 - Arrow tips are computed from endpoint geometry; arrows point to object edges, not labels.
 - Completed frames hold 1.5–3 s wherever narration allows; long scenes stage elements one-by-one.
+- Pacing pass: every final reveal now holds at least ~2 s, with dense scenes held 2.4–5 s.
 - Word timings are stored in `video/src/data/words.json` for frame-accurate cueing.
 
 ## Preview

@@ -186,8 +186,8 @@ export const Speed: React.FC<SceneProps> = ({start}) => {
         numbers, again and again
       </Text>
 
-      <Clock x={1460} y={250} r={60} draw={p(90.9)} handAngle={0.6} tone={COLORS.red} />
-      <Text x={1390} y={338} size={35} tone="red" draw={p(91.2)}>
+      <Clock x={1460} y={250} r={60} draw={p(89.6)} handAngle={0.6} tone={COLORS.red} />
+      <Text x={1390} y={338} size={35} tone="red" draw={p(89.9)}>
         waiting
       </Text>
     </Stage>

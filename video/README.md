@@ -1,5 +1,7 @@
 # Apple on-device LLM — Remotion preview
 
+Repo: https://github.com/lroe/How-Apple-Fits-a-Large-Language-Model-on-Your-iPhone.
+
 Minimalist hand-drawn explainer built from `audio.wav` (12:12.16) and `audio.srt`, with word-level Whisper timing.
 
 ## Preview
@@ -41,6 +43,27 @@ out/preview-sheet.png    57-frame overview contact sheet
 ```
 
 The production timing sheet is at `../storyboard.md`.
+
+## Pacing pass
+
+A second timing pass gives the densest scenes more processing time without changing the audio:
+
+- `Mixed sizes`: removed the hand-off line; the 3.7 average now holds ~2.7 s.
+- `Split it, don't copy it`: "no extra copies" appears ~1.5 s earlier, holding ~2.4 s.
+- `Dense vs sparse`: extended into the natural pause before "hospital"; final state holds ~2.4 s.
+- `The basement library`: extended into the next pause; desk and final books hold ~1.9 s.
+- `Wall two: speed`: clock/waiting appears earlier; holds ~1.9 s.
+- `Look it up`: KV notebook appears earlier; final lookup holds ~3 s.
+- `Paint by numbers`: final "same idea, with weights" moved earlier; holds ~2.4 s.
+- `Google Cloud joins in`: cloud labels moved earlier; hold ~2.1 s.
+- `New in 2026`: Core Advanced card moves with "along with"; holds ~3.3 s.
+- `Trick 1`: 2-bit card/label moved earlier; quantization holds ~2 s.
+- `Train for the size`: final check moved earlier; holds ~2.2 s.
+- `One phone, many features`: removed the hand-off line so the red "three copies" frame holds ~5.3 s.
+- `Match power to the job`: extended ~0.3 s into the next pause; final adaptive frame holds ~2 s.
+- `Phone first, cloud second`: now runs through the PCC hand-off; hard-request arrow holds ~5.4 s.
+- `A hospital of experts`: starts at the natural pause so the sparse comparison holds.
+
 
 ## Optional final render
 

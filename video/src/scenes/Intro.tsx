@@ -271,7 +271,7 @@ export const NoSlow: React.FC<SceneProps> = ({start}) => {
       <Rect x={1290} y={528} w={250} h={54} fill="#fff" stroke={COLORS.ink} strokeWidth={3} draw={p(23.8)} seed={610} />
       <Rect x={1298} y={536} w={190} h={38} fill={COLORS.sage} stroke="none" draw={p(24.0)} seed={611} />
       <Line x1={1540} y1={544} x2={1540} y2={566} stroke={COLORS.ink} strokeWidth={7} draw={p(23.9)} seed={612} />
-      <Text x={1415} y={588} size={25} align="center" width={260} draw={p(24.9)} tone="sage" style={{left: 1290}}>
+      <Text x={1415} y={588} size={25} align="center" width={260} draw={p(24.4)} tone="sage" style={{left: 1290}}>
         past lunch
       </Text>
     </Stage>

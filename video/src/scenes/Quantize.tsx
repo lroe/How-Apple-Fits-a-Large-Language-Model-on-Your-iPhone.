@@ -103,25 +103,25 @@ export const Trick1: React.FC<SceneProps> = ({start}) => {
         />
       ))}
 
-      <Arrow x1={740} y1={575} x2={1040} y2={575} color={COLORS.sage} width={3.4} draw={p(125.8, 0.6)} seed={2230} />
-      <Text x={786} y={610} size={26} tone="sage" draw={p(126.0)}>
+      <Arrow x1={740} y1={575} x2={1040} y2={575} color={COLORS.sage} width={3.4} draw={p(125.3, 0.6)} seed={2230} />
+      <Text x={786} y={610} size={26} tone="sage" draw={p(125.4)}>
         quantise
       </Text>
 
-      <Rect x={1060} y={420} w={360} h={310} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3.2} draw={p(126.1)} seed={2231} />
-      <Text x={1090} y={446} size={27} tone="faint" draw={p(126.2)}>
+      <Rect x={1060} y={420} w={360} h={310} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3.2} draw={p(125.4)} seed={2231} />
+      <Text x={1090} y={446} size={27} tone="faint" draw={p(125.5)}>
         2 bits
       </Text>
-      <Text x={1090} y={500} size={80} font="title" draw={p(126.3)}>
+      <Text x={1090} y={500} size={80} font="title" draw={p(125.6)}>
         0.73
       </Text>
-      <BitBox x={1090} y={610} label="1" draw={p(126.4)} seed={2232} />
-      <BitBox x={1140} y={610} label="0" draw={p(126.5)} seed={2233} />
+      <BitBox x={1090} y={610} label="1" draw={p(125.7)} seed={2232} />
+      <BitBox x={1140} y={610} label="0" draw={p(125.8)} seed={2233} />
 
-      <Text x={1140} y={330} size={54} draw={p(126.7, 0.7)} tone="sage">
+      <Text x={1140} y={330} size={54} draw={p(125.9, 0.7)} tone="sage">
         quantisation
       </Text>
-      <Line x1={1142} y1={398} x2={1142 + 330 * p(126.9)} y2={394} stroke={COLORS.sage} strokeWidth={3.2} draw={p(126.9)} seed={2234} />
+      <Line x1={1142} y1={398} x2={1142 + 330 * p(126.1)} y2={394} stroke={COLORS.sage} strokeWidth={3.2} draw={p(126.1)} seed={2234} />
     </Stage>
   );
 };
@@ -315,7 +315,7 @@ export const PaintByNumber: React.FC<SceneProps> = ({start}) => {
         </React.Fragment>
       ))}
 
-      <Text x={980} y={880} size={32} tone="sage" draw={p(165.7, 0.7)}>
+      <Text x={980} y={880} size={32} tone="sage" draw={p(164.6, 0.7)}>
         same idea, with weights
       </Text>
     </Stage>
@@ -525,11 +525,6 @@ export const MixedBits: React.FC<SceneProps> = ({start}) => {
         bits per weight
       </Text>
       <Line x1={900} y1={596} x2={900 + 520 * p(203.8)} y2={592} stroke={COLORS.ink} strokeWidth={3.2} draw={p(203.8)} seed={2720} />
-
-      <Text x={900} y={672} size={30} tone="sage" draw={p(204.9, 0.7)}>
-        let's run the numbers
-      </Text>
-      <Arrow x1={900} y1={730} x2={1080} y2={730} color={COLORS.sage} width={3} draw={p(205.0)} seed={2721} />
     </Stage>
   );
 };
@@ -920,7 +915,7 @@ export const DevLesson: React.FC<SceneProps> = ({start}) => {
       <Text x={1120} y={726} size={38} align="center" width={260} draw={p(313.1)}>
         holds up
       </Text>
-      <Check x={1250} y={872} size={42} draw={p(313.4)} />
+      <Check x={1250} y={872} size={42} draw={p(312.8)} />
     </Stage>
   );
 };

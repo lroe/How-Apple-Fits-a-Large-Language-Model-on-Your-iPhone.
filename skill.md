@@ -40,6 +40,11 @@ Generates storyboards, timing sheets, visual scripts, and production prompts mat
   * Never transition immediately after an asset appears.
   * Hold the completed frame for **1.5 to 3.0 seconds** or more as needed  after narration of that point concludes. we need to ensure the user is able to process everything.
   * Viewers need time to read callouts, register the relationship, and absorb the insight before movement resumes.
+* **Minimum Processing Hold (hard rule):**
+  * The final visual reveal in a scene must have at least **2.0 seconds** of screen time before the cut. If narration makes that impossible, move the reveal earlier when it is contextual, or extend the scene into the next natural pause.
+  * Never cut on the same word that completes a diagram.
+  * If the final narration line is only a hand-off ("let's run the numbers", "adapters fix that"), move that copy into the next scene instead of leaving it 0.1–0.8 s on screen.
+  * Dense scenes (multi-part diagrams, math, architecture) need the **final state held 2.5–3.5 s**. Simplify the last beat rather than rushing the cut.
 
 ---
 

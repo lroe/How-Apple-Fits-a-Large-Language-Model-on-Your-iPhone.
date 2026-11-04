@@ -80,7 +80,7 @@ export const Layouts: React.FC<SceneProps> = ({start}) => {
 
       {[0, 1, 2].map((i) => (
         <React.Fragment key={i}>
-          <Arrow x1={600} y1={370 + i * 72} x2={1040} y2={330 + i * 130} color={COLORS.sage} width={2.8} draw={p(479.9 + i * 0.12)} seed={5320 + i} />
+          <Arrow x1={600} y1={370 + i * 72} x2={1058} y2={330 + i * 130} color={COLORS.sage} width={2.8} draw={p(479.9 + i * 0.12)} seed={5320 + i} />
           <Rect x={1060} y={300 + i * 140} w={320} h={86} fill={i === 1 ? COLORS.sand : '#fff'} stroke={COLORS.ink} strokeWidth={2.8} draw={p(480.0 + i * 0.12)} seed={5330 + i} />
           <Text x={1060} y={326 + i * 140} size={26} align="center" width={320} draw={p(480.1 + i * 0.12)}>
             chunk {i + 1}
@@ -88,10 +88,10 @@ export const Layouts: React.FC<SceneProps> = ({start}) => {
         </React.Fragment>
       ))}
 
-      <Rect x={1400} y={720} w={120} h={100} fill="#fff" stroke={COLORS.ink} strokeWidth={2.8} draw={p(483.8)} seed={5340} />
-      <Rect x={1430} y={750} w={120} h={100} fill="#fff" stroke={COLORS.ink} strokeWidth={2.8} draw={p(483.9)} seed={5341} />
-      <Cross x={1460} y={770} size={58} draw={p(484.1)} />
-      <Text x={1400} y={866} size={30} tone="red" draw={p(484.3)}>
+      <Rect x={1400} y={720} w={120} h={100} fill="#fff" stroke={COLORS.ink} strokeWidth={2.8} draw={p(482.2)} seed={5340} />
+      <Rect x={1430} y={750} w={120} h={100} fill="#fff" stroke={COLORS.ink} strokeWidth={2.8} draw={p(482.3)} seed={5341} />
+      <Cross x={1460} y={770} size={58} draw={p(482.5)} />
+      <Text x={1400} y={866} size={30} tone="red" draw={p(482.7)}>
         no extra copies
       </Text>
     </Stage>

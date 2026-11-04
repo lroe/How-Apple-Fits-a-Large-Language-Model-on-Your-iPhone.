@@ -76,14 +76,14 @@ export const New2026: React.FC<SceneProps> = ({start}) => {
       </Text>
       <Phone x={630} y={500} w={90} h={180} draw={p(570.0)} screenFill="#FBF7ED" />
 
-      <Rect x={1000} y={350} w={540} h={430} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(575.0)} seed={6211} />
-      <Text x={1030} y={380} size={40} draw={p(575.1)}>
+      <Rect x={1000} y={350} w={540} h={430} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(573.7)} seed={6211} />
+      <Text x={1030} y={380} size={40} draw={p(573.8)}>
         Core Advanced
       </Text>
-      <Text x={1030} y={470} size={28} tone="faint" draw={p(575.3)}>
+      <Text x={1030} y={470} size={28} tone="faint" draw={p(574.0)}>
         the larger sibling
       </Text>
-      <MiniGrid x={1220} y={520} cols={4} rows={3} cell={36} gap={8} active={[1, 5, 9]} draw={p(575.5)} faint />
+      <MiniGrid x={1220} y={520} cols={4} rows={3} cell={36} gap={8} active={[1, 5, 9]} draw={p(574.2)} faint />
     </Stage>
   );
 };
@@ -140,10 +140,10 @@ export const Hospital: React.FC<SceneProps> = ({start}) => {
 
   return (
     <Stage eyebrow="The hospital metaphor">
-      <Text x={120} y={128} size={74} draw={p(595.0)}>
+      <Text x={120} y={128} size={74} draw={p(596.0)}>
         A hospital of experts
       </Text>
-      <Text x={124} y={220} size={28} tone="faint" draw={p(595.2)}>
+      <Text x={124} y={220} size={28} tone="faint" draw={p(596.1)}>
         hundreds inside, a few on your case
       </Text>
 
@@ -341,7 +341,7 @@ export const Library: React.FC<SceneProps> = ({start}) => {
       <Text x={1020} y={600} size={26} tone="sage" draw={p(629.4)}>
         a few books
       </Text>
-      <Text x={1200} y={880} size={30} tone="faint" draw={p(630.8)}>
+      <Text x={1200} y={880} size={30} tone="faint" draw={p(630.2)}>
         the desk
       </Text>
     </Stage>
@@ -363,16 +363,16 @@ export const Nvidia: React.FC<SceneProps> = ({start}) => {
       </Text>
 
       <Cloud x={500} y={250} w={980} h={540} draw={p(632.3)} seed={6801} />
-      <Text x={600} y={292} size={28} tone="sage" draw={p(632.5)}>
+      <Text x={620} y={320} size={28} tone="sage" draw={p(632.5)}>
         Private Cloud Compute
       </Text>
 
       <Rect x={760} y={390} w={340} h={260} fill="#fff" stroke={COLORS.ink} strokeWidth={3} draw={p(635.0)} seed={6810} />
       <Chip x={800} y={430} w={260} h={160} label="NVIDIA" sub="GPU" draw={p(636.2)} seed={6811} />
-      <Text x={1240} y={520} size={30} tone="sage" draw={p(637.7)}>
+      <Text x={1240} y={520} size={30} tone="sage" draw={p(636.8)}>
         Google Cloud
       </Text>
-      <Text x={1240} y={570} size={24} tone="faint" draw={p(637.9)}>
+      <Text x={1240} y={570} size={24} tone="faint" draw={p(637.2)}>
         more capacity
       </Text>
     </Stage>

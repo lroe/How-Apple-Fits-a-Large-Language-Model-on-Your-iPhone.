@@ -37,7 +37,7 @@ export const Trick2: React.FC<SceneProps> = ({start}) => (
 export const KV: React.FC<SceneProps> = ({start}) => {
   const t = useSceneTime(start);
   const p = (cue: number, dur = 0.6) => pF(t, start, cue, dur);
-  const notebook = p(336.22, 0.8);
+  const notebook = p(335.0, 0.8);
   const waste = p(331.0, 0.6) * (1 - notebook);
 
   return (
@@ -83,21 +83,21 @@ export const KV: React.FC<SceneProps> = ({start}) => {
 
       {/* notebook */}
       <div style={{opacity: notebook}}>
-        <Rect x={1250} y={300} w={360} h={500} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3.2} draw={p(336.3)} seed={4150} />
-        <Line x1={1280} y1={300} x2={1280} y2={800} stroke={COLORS.ink} strokeWidth={2.4} draw={p(336.4)} seed={4151} />
-        <Text x={1250} y={326} size={34} align="center" width={360} draw={p(336.5)}>
+        <Rect x={1250} y={300} w={360} h={500} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3.2} draw={p(335.1)} seed={4150} />
+        <Line x1={1280} y1={300} x2={1280} y2={800} stroke={COLORS.ink} strokeWidth={2.4} draw={p(335.2)} seed={4151} />
+        <Text x={1250} y={326} size={34} align="center" width={360} draw={p(335.3)}>
           KV cache
         </Text>
         {Array.from({length: 5}).map((_, i) => (
           <React.Fragment key={i}>
-            <Text x={1300} y={380 + i * 76} size={26} draw={p(336.6 + i * 0.1)} tone="faint">
+            <Text x={1300} y={380 + i * 76} size={26} draw={p(335.4 + i * 0.1)} tone="faint">
               {i + 1}
             </Text>
-            <Line x1={1330} y1={400 + i * 76} x2={1560} y2={398 + i * 76} stroke={COLORS.ink} strokeWidth={2.2} draw={p(336.7 + i * 0.1)} seed={4160 + i} opacity={0.6} />
+            <Line x1={1330} y1={400 + i * 76} x2={1560} y2={398 + i * 76} stroke={COLORS.ink} strokeWidth={2.2} draw={p(335.5 + i * 0.1)} seed={4160 + i} opacity={0.6} />
           </React.Fragment>
         ))}
-        <Arrow x1={1242} y1={540} x2={1110} y2={540} color={COLORS.sage} width={3.2} draw={p(338.8)} seed={4170} />
-        <Text x={1130} y={500} size={26} tone="sage" draw={p(339.0)}>
+        <Arrow x1={1242} y1={540} x2={1110} y2={540} color={COLORS.sage} width={3.2} draw={p(337.2)} seed={4170} />
+        <Text x={1130} y={500} size={26} tone="sage" draw={p(337.4)}>
           look up
         </Text>
       </div>
@@ -334,9 +334,6 @@ export const ManyFeatures: React.FC<SceneProps> = ({start}) => {
 
       <Text x={960} y={850} size={36} align="center" width={1000} tone="red" draw={p(411.4, 0.7)} style={{left: 460}}>
         storing the same knowledge three times
-      </Text>
-      <Text x={960} y={930} size={33} align="center" width={1000} tone="sage" draw={p(416.7, 0.7)} style={{left: 460}}>
-        adapters fix that
       </Text>
     </Stage>
   );
