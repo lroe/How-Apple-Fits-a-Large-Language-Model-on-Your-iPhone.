@@ -6,7 +6,7 @@ import {ChapterCard} from '../components/ChapterCard';
 import {GroundLine, Stage, useSceneTime, type SceneProps} from '../components/Stage';
 
 const pF = (t: number, start: number, cue: number, dur = 0.55) =>
-  progress(t, cue, dur, easeOut);
+  progress(t, cue <= start + 1.6 ? cue - 1.6 : cue, dur, easeOut);
 
 const Word: React.FC<{x: number; y: number; w?: number; label: string; draw?: number; fill?: string; seed?: number; size?: number}> = ({
   x,
@@ -29,7 +29,7 @@ const Word: React.FC<{x: number; y: number; w?: number; label: string; draw?: nu
 /* ------------------------------------------------------------------ */
 export const Trick2: React.FC<SceneProps> = ({start}) => (
   <ChapterCard start={start} number="02" title="No repeated homework" subtitle="the other half of memory" eyebrow="Trick two">
-    <Notebook x={1250} y={330} w={230} h={280} draw={0.9} label="reuse the work" lines={5} seed={4101} />
+    <Notebook x={1250} y={390} w={230} h={280} draw={0.9} label="reuse the work" lines={5} seed={4101} />
   </ChapterCard>
 );
 
@@ -184,14 +184,14 @@ export const Building: React.FC<SceneProps> = ({start}) => {
         the top floors read floor five
       </Text>
 
-      <Rect x={480} y={top} w={420} h={height} fill="#fff" stroke={COLORS.ink} strokeWidth={3.4} draw={p(366.8)} seed={4301} />
+      <Rect x={480} y={top} w={420} h={height} fill="#fff" stroke={COLORS.ink} strokeWidth={3.4} draw={p(362.9)} seed={4301} />
       {Array.from({length: floors - 1}).map((_, i) => (
-        <Line key={i} x1={480} y1={top + (i + 1) * fh} x2={900} y2={top + (i + 1) * fh} stroke={COLORS.ink} strokeWidth={2.2} draw={p(367.0 + i * 0.03)} seed={4310 + i} opacity={0.7} />
+        <Line key={i} x1={480} y1={top + (i + 1) * fh} x2={900} y2={top + (i + 1) * fh} stroke={COLORS.ink} strokeWidth={2.2} draw={p(363.0 + i * 0.03)} seed={4310 + i} opacity={0.7} />
       ))}
       {Array.from({length: floors}).map((_, i) => {
         const floor = floors - i;
         return (
-          <Text key={floor} x={430} y={top + i * fh + fh / 2 - 18} size={26} tone="faint" draw={p(367.2 + i * 0.03)}>
+          <Text key={floor} x={430} y={top + i * fh + fh / 2 - 18} size={26} tone="faint" draw={p(363.2 + i * 0.03)}>
             {floor}
           </Text>
         );
@@ -306,7 +306,7 @@ export const ManyFeatures: React.FC<SceneProps> = ({start}) => {
         {x: 1120, title: 'key facts', cue: 406.5},
       ].map((f, i) => (
         <React.Fragment key={f.title}>
-          <Rect x={f.x} y={290} w={380} h={180} fill="#fff" stroke={COLORS.ink} strokeWidth={3} draw={p(f.cue)} seed={4500 + i} />
+          <Rect x={f.x} y={290} w={380} h={180} fill="#fff" stroke={COLORS.ink} strokeWidth={3} draw={p(397.6)} seed={4500 + i} />
           <Text x={f.x} y={320} size={36} align="center" width={380} draw={p(f.cue + 0.1)}>
             {f.title}
           </Text>
@@ -352,14 +352,14 @@ export const AdapterConcept: React.FC<SceneProps> = ({start}) => {
         a tiny add-on changes the job
       </Text>
 
-      <Rect x={160} y={380} w={380} h={240} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3.2} draw={p(418.5)} seed={4601} />
-      <Text x={160} y={416} size={38} align="center" width={380} draw={p(418.6)}>
+      <Rect x={160} y={380} w={380} h={240} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3.2} draw={p(417.2)} seed={4601} />
+      <Text x={160} y={416} size={38} align="center" width={380} draw={p(417.3)}>
         base model
       </Text>
-      <Text x={160} y={500} size={58} align="center" width={380} draw={p(418.7)}>
+      <Text x={160} y={500} size={58} align="center" width={380} draw={p(417.4)}>
         3B
       </Text>
-      <Text x={160} y={570} size={24} align="center" width={380} tone="faint" draw={p(418.8)}>
+      <Text x={160} y={570} size={24} align="center" width={380} tone="faint" draw={p(417.5)}>
         frozen and shared
       </Text>
 

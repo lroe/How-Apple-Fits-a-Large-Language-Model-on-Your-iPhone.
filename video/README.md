@@ -44,6 +44,13 @@ out/preview-sheet.png    57-frame overview contact sheet
 
 The production timing sheet is at `../storyboard.md`.
 
+## Reading pass
+
+- Removed the top-left eyebrow/title/subtitle from every content scene. The narration and the diagram labels carry the scene; no more “read top-left, then look center” eye movement.
+- Chapter cards keep only the big chapter number, one title, and a motif. Subtitles and the footer line are gone.
+- Scene transitions now use a fast left-to-right wipe that reveals the next diagram over the previous frame. No white gaps and no grey cross-fade.
+- Opening visuals are pre-rolled so they are already drawn when the wipe completes.
+
 ## Pacing pass
 
 A second timing pass gives the densest scenes more processing time without changing the audio:

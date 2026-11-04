@@ -16,13 +16,6 @@ export const Hero: React.FC<SceneProps> = ({start}) => {
 
   return (
     <Stage eyebrow="Apple · on-device intelligence">
-      <Text x={120} y={128} size={82} draw={p(0.1, 0.7)}>
-        A model in your pocket
-      </Text>
-      <Text x={124} y={214} size={28} tone="faint" draw={p(0.45, 0.7)} opacity={0.95}>
-        no internet required
-      </Text>
-
       {/* Phone */}
       <div style={{opacity: 0.7 + 0.3 * phoneDraw}}>
         <Path

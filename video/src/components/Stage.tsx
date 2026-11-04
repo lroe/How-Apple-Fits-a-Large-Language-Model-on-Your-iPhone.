@@ -32,23 +32,6 @@ export const Stage: React.FC<{
       opacity,
     }}
   >
-    {eyebrow && (
-      <div
-        style={{
-          position: 'absolute',
-          left: 120,
-          top: 78,
-          fontFamily: fontLabel,
-          fontSize: 22,
-          letterSpacing: 4.5,
-          textTransform: 'uppercase',
-          color:
-            eyebrowColor === 'faint' ? COLORS.faint : COLORS[eyebrowColor],
-        }}
-      >
-        {eyebrow}
-      </div>
-    )}
     {children}
   </AbsoluteFill>
 );

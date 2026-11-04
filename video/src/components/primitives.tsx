@@ -47,6 +47,14 @@ export const Text: React.FC<{
 }) => {
   const p = Math.max(0, Math.min(1, draw));
   const scale = mode === 'pop' ? 0.92 + 0.08 * p : 1;
+  const isTopHeading =
+    typeof children === 'string' &&
+    children.trim().length > 8 &&
+    y < 250 &&
+    x >= 110 &&
+    x <= 140 &&
+    (size >= 60 || (y >= 190 && size <= 34));
+  if (isTopHeading) return null;
   return (
     <div
       style={{

@@ -13,7 +13,10 @@ export const ChapterCard: React.FC<{
   children?: React.ReactNode;
 }> = ({start, number, title, subtitle, tone = 'red', eyebrow = 'Chapter', children}) => {
   const t = useSceneTime(start);
-  const p = (offset: number, dur = 0.5) => progress(t, start + offset, dur);
+  const p = (offset: number, dur = 0.5) => {
+    const cue = start + offset;
+    return progress(t, offset <= 0.9 ? cue - 1.0 : cue, dur);
+  };
   return (
     <Stage eyebrow={eyebrow}>
       <Text x={160} y={286} size={210} font="title" tone={tone} draw={p(0.05, 0.6)}>
@@ -22,24 +25,7 @@ export const ChapterCard: React.FC<{
       <Text x={470} y={230} size={104} draw={p(0.4, 0.6)} width={900}>
         {title}
       </Text>
-      <div
-        style={{
-          position: 'absolute',
-          left: 474,
-          top: 390,
-          width: 760 * p(0.7, 0.5),
-          height: 3,
-          background: COLORS.ink,
-          opacity: 0.55,
-        }}
-      />
-      <Text x={474} y={430} size={40} tone="faint" draw={p(0.9, 0.6)} width={800}>
-        {subtitle}
-      </Text>
       <div style={{position: 'absolute', left: 0, top: 0}}>{children}</div>
-      <Text x={474} y={760} size={26} tone="faint" draw={p(1.4, 0.6)} letterSpacing={3} style={{textTransform: 'uppercase'}}>
-        one of the small decisions
-      </Text>
     </Stage>
   );
 };

@@ -18,6 +18,8 @@ Generates storyboards, timing sheets, visual scripts, and production prompts mat
   * Word Density: Maximum 1–5 words per callout. Never transcribe full narration onto screen.
   * Placement: Positioned directly above, below, or adjacent to the associated visual anchor.
   * **No grey text:** Secondary labels, eyebrows, and subtitles must stay dark charcoal (`#1A1A1A` at 80–100% opacity, or `#3D3A35`). Never use light grey or washed-out text; it reads as disabled and disappears on projectors.
+  * **No top-left scene headings:** Do not repeat the narration as a title + subtitle at the top of content scenes. The narration carries the sentence; the diagram carries short functional labels only. This avoids the “read top-left, then look center” eye ping-pong.
+  * **Chapter cards are the only exception:** a chapter number + a single motif may be used as a full-screen transition. Keep them sparse and never add a paragraph.
   *
 
 ---
@@ -45,6 +47,11 @@ Generates storyboards, timing sheets, visual scripts, and production prompts mat
   * Never cut on the same word that completes a diagram.
   * If the final narration line is only a hand-off ("let's run the numbers", "adapters fix that"), move that copy into the next scene instead of leaving it 0.1–0.8 s on screen.
   * Dense scenes (multi-part diagrams, math, architecture) need the **final state held 2.5–3.5 s**. Simplify the last beat rather than rushing the cut.
+* **No empty cuts (hard rule):**
+  * Never cut to a completely blank white frame. The next scene must open on a visual, not on a title card or an empty canvas.
+  * Use a clean left-to-right wipe that reveals the next scene over the still-visible previous frame. Do not fade both scenes toward white; that produces a grey/blank gap.
+  * If a scene truly needs a chapter card, keep the previous diagram or a motif underneath it so the screen is never empty.
+  * Verify with a still at **scene start + 0.4 s**. If it is more than ~80% empty, move the first visual earlier.
 
 ---
 

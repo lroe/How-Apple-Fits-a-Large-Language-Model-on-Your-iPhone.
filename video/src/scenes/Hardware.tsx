@@ -6,7 +6,7 @@ import {ChapterCard} from '../components/ChapterCard';
 import {GroundLine, Stage, useSceneTime, type SceneProps} from '../components/Stage';
 
 const pF = (t: number, start: number, cue: number, dur = 0.55) =>
-  progress(t, cue, dur, easeOut);
+  progress(t, cue <= start + 1.6 ? cue - 1.6 : cue, dur, easeOut);
 
 /* ------------------------------------------------------------------ */
 export const Trick4: React.FC<SceneProps> = ({start}) => (

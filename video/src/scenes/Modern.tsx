@@ -5,7 +5,7 @@ import {Bean, Check, Chip, Cloud, Cross, Phone, Text} from '../components/primit
 import {GroundLine, Stage, useSceneTime, type SceneProps} from '../components/Stage';
 
 const pF = (t: number, start: number, cue: number, dur = 0.55) =>
-  progress(t, cue, dur, easeOut);
+  progress(t, cue <= start + 1.6 ? cue - 1.6 : cue, dur, easeOut);
 
 const MiniGrid: React.FC<{
   x: number;
@@ -57,10 +57,10 @@ export const New2026: React.FC<SceneProps> = ({start}) => {
         the same idea, updated
       </Text>
 
-      <Rect x={1480} y={130} w={260} h={170} fill="#fff" stroke={COLORS.ink} strokeWidth={3.0} draw={p(564.0)} seed={6201} />
-      <Line x1={1520} y1={130} x2={1520} y2={98} stroke={COLORS.ink} strokeWidth={3} draw={p(564.1)} seed={6202} />
-      <Line x1={1700} y1={130} x2={1700} y2={98} stroke={COLORS.ink} strokeWidth={3} draw={p(564.1)} seed={6203} />
-      <Text x={1480} y={166} size={76} align="center" width={260} font="title" draw={p(564.2)} style={{left: 1480}}>
+      <Rect x={1480} y={130} w={260} h={170} fill="#fff" stroke={COLORS.ink} strokeWidth={3.0} draw={p(563.6)} seed={6201} />
+      <Line x1={1520} y1={130} x2={1520} y2={98} stroke={COLORS.ink} strokeWidth={3} draw={p(563.7)} seed={6202} />
+      <Line x1={1700} y1={130} x2={1700} y2={98} stroke={COLORS.ink} strokeWidth={3} draw={p(563.7)} seed={6203} />
+      <Text x={1480} y={166} size={76} align="center" width={260} font="title" draw={p(563.8)} style={{left: 1480}}>
         2026
       </Text>
 
@@ -102,7 +102,7 @@ export const Sparse: React.FC<SceneProps> = ({start}) => {
         dense works everywhere, sparse picks experts
       </Text>
 
-      <Rect x={170} y={300} w={720} h={520} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(581.9)} seed={6301} />
+      <Rect x={170} y={300} w={720} h={520} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(577.3)} seed={6301} />
       <Text x={200} y={320} size={34} draw={p(582.0)}>
         dense
       </Text>
@@ -111,7 +111,7 @@ export const Sparse: React.FC<SceneProps> = ({start}) => {
       </Text>
       <MiniGrid x={300} y={420} cols={8} rows={5} cell={54} gap={8} draw={p(582.2)} />
 
-      <Rect x={1030} y={300} w={720} h={520} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(586.0)} seed={6310} />
+      <Rect x={1030} y={300} w={720} h={520} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(577.3)} seed={6310} />
       <Text x={1060} y={320} size={34} draw={p(586.1)}>
         sparse
       </Text>
@@ -263,11 +263,11 @@ export const Storage: React.FC<SceneProps> = ({start}) => {
         the whole model is on flash
       </Text>
 
-      <Rect x={220} y={320} w={440} h={420} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(616.8)} seed={6601} />
-      <Text x={220} y={274} size={28} align="center" width={440} tone="faint" draw={p(616.9)} style={{left: 220}}>
+      <Rect x={220} y={320} w={440} h={420} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(615.0)} seed={6601} />
+      <Text x={220} y={274} size={28} align="center" width={440} tone="faint" draw={p(615.1)} style={{left: 220}}>
         flash storage
       </Text>
-      <MiniGrid x={260} y={360} cols={6} rows={5} cell={54} gap={10} active={[5, 17, 29]} draw={p(617.0)} faint />
+      <MiniGrid x={260} y={360} cols={6} rows={5} cell={54} gap={10} active={[5, 17, 29]} draw={p(615.2)} faint />
 
       <Rect x={1200} y={340} w={420} h={280} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(619.3)} seed={6610} />
       <Text x={1200} y={294} size={28} align="center" width={420} tone="faint" draw={p(619.4)} style={{left: 1200}}>
@@ -299,7 +299,7 @@ export const Library: React.FC<SceneProps> = ({start}) => {
 
   return (
     <Stage eyebrow="The basement">
-      <GroundLine y={860} draw={p(627.0)} />
+      <GroundLine y={860} draw={p(626.7)} />
       <Text x={120} y={128} size={74} draw={p(627.1)}>
         A huge library downstairs
       </Text>
@@ -307,9 +307,9 @@ export const Library: React.FC<SceneProps> = ({start}) => {
         with a few books on your desk
       </Text>
 
-      <Rect x={180} y={320} w={760} h={500} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(627.4)} seed={6701} />
+      <Rect x={180} y={320} w={760} h={500} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(626.7)} seed={6701} />
       {[0, 1, 2, 3].map((s) => (
-        <Line key={s} x1={180} y1={440 + s * 95} x2={940} y2={440 + s * 95} stroke={COLORS.ink} strokeWidth={2.6} draw={p(627.6 + s * 0.05)} seed={6710 + s} opacity={0.75} />
+        <Line key={s} x1={180} y1={440 + s * 95} x2={940} y2={440 + s * 95} stroke={COLORS.ink} strokeWidth={2.6} draw={p(626.9 + s * 0.05)} seed={6710 + s} opacity={0.75} />
       ))}
       {Array.from({length: 40}).map((_, i) => {
         const shelf = Math.floor(i / 10);
@@ -393,7 +393,7 @@ export const ZoomOut: React.FC<SceneProps> = ({start}) => {
         the model adapts to the resources it has
       </Text>
 
-      <Phone x={200} y={380} w={260} h={470} draw={p(646.3)} screenFill="#FBF7ED" />
+      <Phone x={200} y={380} w={260} h={470} draw={p(640.0)} screenFill="#FBF7ED" />
       <Text x={330} y={600} size={50} align="center" width={260} tone="faint" draw={p(646.4)} style={{left: 200}}>
         3B
       </Text>
@@ -404,7 +404,7 @@ export const ZoomOut: React.FC<SceneProps> = ({start}) => {
         squeezed model
       </Text>
 
-      <Rect x={720} y={430} w={380} h={250} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(648.9)} seed={6901} />
+      <Rect x={720} y={430} w={380} h={250} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(640.2)} seed={6901} />
       <Text x={720} y={476} size={36} align="center" width={380} draw={p(649.0)}>
         stronger device
       </Text>
@@ -413,7 +413,7 @@ export const ZoomOut: React.FC<SceneProps> = ({start}) => {
         more experts
       </Text>
 
-      <Cloud x={1340} y={360} w={420} h={280} draw={p(651.5)} seed={6910} />
+      <Cloud x={1340} y={360} w={420} h={280} draw={p(640.4)} seed={6910} />
       <Text x={1340} y={600} size={28} align="center" width={420} tone="faint" draw={p(651.6)} style={{left: 1340}}>
         hard request
       </Text>

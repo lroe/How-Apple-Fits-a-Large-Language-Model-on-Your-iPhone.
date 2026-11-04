@@ -6,7 +6,7 @@ import {BrickWall} from './Intro';
 import {GroundLine, Stage, useSceneTime, type SceneProps} from '../components/Stage';
 
 const pF = (t: number, start: number, cue: number, dur = 0.55) =>
-  progress(t, cue, dur, easeOut);
+  progress(t, cue <= start + 1.6 ? cue - 1.6 : cue, dur, easeOut);
 
 const Clock: React.FC<{x: number; y: number; r?: number; draw?: number; handAngle?: number; tone?: string}> = ({
   x,
@@ -45,10 +45,10 @@ export const Space: React.FC<SceneProps> = ({start}) => {
         16-bit weights alone
       </Text>
 
-      <Text x={240} y={396} size={27} tone="faint" draw={p(60.8)}>
+      <Text x={240} y={396} size={27} tone="faint" draw={p(60.2)}>
         phone memory · 8 GB
       </Text>
-      <Rect x={240} y={448} w={1440} h={170} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(60.7)} seed={1011} />
+      <Rect x={240} y={448} w={1440} h={170} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(60.1)} seed={1011} />
 
       <Rect x={248} y={456} w={1060} h={154} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={2.8} draw={p(62.0)} seed={1012} />
       <Text x={300} y={478} size={37} draw={p(62.2)}>
@@ -158,14 +158,14 @@ export const Speed: React.FC<SceneProps> = ({start}) => {
         how fast data can move
       </Text>
 
-      <Rect x={220} y={400} w={300} h={290} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3.2} draw={p(81.8)} seed={1201} />
-      <Text x={220} y={352} size={34} align="center" width={300} draw={p(81.9)} style={{left: 220}}>
+      <Rect x={220} y={400} w={300} h={290} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3.2} draw={p(80.9)} seed={1201} />
+      <Text x={220} y={352} size={34} align="center" width={300} draw={p(81.0)} style={{left: 220}}>
         memory
       </Text>
-      <DotGrid x={252} y={448} cols={3} rows={3} gap={40} r={5} progress={p(81.95)} opacity={0.65} />
+      <DotGrid x={252} y={448} cols={3} rows={3} gap={40} r={5} progress={p(81.0)} opacity={0.65} />
 
-      <Chip x={1080} y={400} w={300} h={290} label="chip" sub="very fast" draw={p(82.1)} seed={1210} />
-      <Text x={1080} y={724} size={27} align="center" width={300} tone="faint" draw={p(82.3)} style={{left: 1080}}>
+      <Chip x={1080} y={400} w={300} h={290} label="chip" sub="very fast" draw={p(81.2)} seed={1210} />
+      <Text x={1080} y={724} size={27} align="center" width={300} tone="faint" draw={p(81.4)} style={{left: 1080}}>
         only waits for data
       </Text>
 
@@ -326,8 +326,8 @@ export const WallsRecap: React.FC<SceneProps> = ({start}) => {
         memory size, or data speed
       </Text>
 
-      <BrickWall x={450} y={330} w={320} h={340} draw={p(110.6)} seed={1501} />
-      <BrickWall x={1150} y={330} w={320} h={340} draw={p(110.7)} seed={1521} />
+      <BrickWall x={450} y={330} w={320} h={340} draw={p(110.0)} seed={1501} />
+      <BrickWall x={1150} y={330} w={320} h={340} draw={p(110.1)} seed={1521} />
       <Text x={450} y={706} size={46} align="center" width={320} draw={p(111.2)} style={{left: 450}}>
         memory size
       </Text>

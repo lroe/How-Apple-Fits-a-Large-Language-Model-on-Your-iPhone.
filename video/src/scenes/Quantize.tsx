@@ -5,7 +5,7 @@ import {Bean, Box, Check, Chip, Crayon, Cross, Hat, Phone, Text} from '../compon
 import {ChapterTag, GroundLine, Stage, useSceneTime, type SceneProps} from '../components/Stage';
 
 const pF = (t: number, start: number, cue: number, dur = 0.55) =>
-  progress(t, cue, dur, easeOut);
+  progress(t, cue <= start + 1.6 ? cue - 1.6 : cue, dur, easeOut);
 
 const BitBox: React.FC<{x: number; y: number; w?: number; h?: number; label: string; draw?: number; fill?: string; seed?: number; size?: number}> = ({
   x,
@@ -74,12 +74,6 @@ export const Trick1: React.FC<SceneProps> = ({start}) => {
     <Stage eyebrow="Trick one">
       <Text x={120} y={164} size={170} font="title" tone="red" draw={p(118.2, 0.7)}>
         01
-      </Text>
-      <Text x={360} y={128} size={84} draw={p(119.0, 0.7)}>
-        Make every number smaller
-      </Text>
-      <Text x={364} y={232} size={30} tone="faint" draw={p(119.3, 0.7)}>
-        fewer bits for every weight
       </Text>
 
       <Rect x={220} y={420} w={500} h={310} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(119.5)} seed={2201} />
@@ -275,7 +269,7 @@ export const PaintByNumber: React.FC<SceneProps> = ({start}) => {
         fill={COLORS.sand}
         stroke={COLORS.ink}
         strokeWidth={3.2}
-        draw={p(147.5)}
+        draw={p(145.9)}
         seed={2430}
       />
       {[
@@ -284,8 +278,8 @@ export const PaintByNumber: React.FC<SceneProps> = ({start}) => {
         {x: 1220, y: 380, c: COLORS.sandDeep, n: '3'},
       ].map((b, i) => (
         <React.Fragment key={i}>
-          <Circle cx={b.x} cy={b.y} d={54} fill={b.c} stroke={COLORS.ink} strokeWidth={2.2} draw={p(147.8 + i * 0.15)} seed={2440 + i} />
-          <Text x={b.x - 20} y={b.y - 18} size={24} align="center" width={40} draw={p(148.0 + i * 0.15)} style={{left: b.x - 20}}>
+          <Circle cx={b.x} cy={b.y} d={54} fill={b.c} stroke={COLORS.ink} strokeWidth={2.2} draw={p(146.2 + i * 0.15)} seed={2440 + i} />
+          <Text x={b.x - 20} y={b.y - 18} size={24} align="center" width={40} draw={p(146.4 + i * 0.15)} style={{left: b.x - 20}}>
             {b.n}
           </Text>
         </React.Fragment>
@@ -345,8 +339,8 @@ export const LookupTable: React.FC<SceneProps> = ({start}) => {
       {vals.map((row, r) =>
         row.map((v, c) => (
           <React.Fragment key={`${r}-${c}`}>
-            <Rect x={170 + c * 145} y={350 + r * 92} w={124} h={64} fill={c === 1 ? COLORS.sand : '#fff'} stroke={COLORS.ink} strokeWidth={2.4} draw={p(167.9 + r * 0.08 + c * 0.04)} seed={2500 + r * 3 + c} />
-            <Text x={170 + c * 145} y={364 + r * 92} size={27} align="center" width={124} draw={p(168.0 + r * 0.08 + c * 0.04)}>
+            <Rect x={170 + c * 145} y={350 + r * 92} w={124} h={64} fill={c === 1 ? COLORS.sand : '#fff'} stroke={COLORS.ink} strokeWidth={2.4} draw={p(167.4 + r * 0.08 + c * 0.04)} seed={2500 + r * 3 + c} />
+            <Text x={170 + c * 145} y={364 + r * 92} size={27} align="center" width={124} draw={p(167.5 + r * 0.08 + c * 0.04)}>
               {v}
             </Text>
           </React.Fragment>
@@ -417,13 +411,13 @@ export const Bits: React.FC<SceneProps> = ({start}) => {
         How short can a note be?
       </Text>
 
-      <Rect x={160} y={300} w={230} h={250} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(182.1)} seed={2601} />
-      <Text x={160} y={258} size={28} align="center" width={230} tone="faint" draw={p(182.2)} style={{left: 160}}>
+      <Rect x={160} y={300} w={230} h={250} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(180.5)} seed={2601} />
+      <Text x={160} y={258} size={28} align="center" width={230} tone="faint" draw={p(180.6)} style={{left: 160}}>
         one bit
       </Text>
-      <BitBox x={192} y={340} w={70} h={80} label="0" draw={p(182.2)} seed={2602} size={44} />
-      <BitBox x={288} y={340} w={70} h={80} label="1" draw={p(182.3)} seed={2603} size={44} />
-      <Text x={160} y={470} size={28} align="center" width={230} draw={p(182.5)} style={{left: 160}}>
+      <BitBox x={192} y={340} w={70} h={80} label="0" draw={p(180.6)} seed={2602} size={44} />
+      <BitBox x={288} y={340} w={70} h={80} label="1" draw={p(180.7)} seed={2603} size={44} />
+      <Text x={160} y={470} size={28} align="center" width={230} draw={p(180.9)} style={{left: 160}}>
         zero or one
       </Text>
 
@@ -540,7 +534,7 @@ export const RunNumbers: React.FC<SceneProps> = ({start}) => {
         Let's run the numbers
       </Text>
 
-      <Text x={180} y={292} size={52} draw={p(206.44, 0.8)}>
+      <Text x={180} y={292} size={52} draw={p(205.6, 0.8)}>
         3,000,000,000 × 3.7 = 11,100,000,000 bits
       </Text>
       <Text x={180} y={392} size={62} draw={p(211.6, 0.8)}>
@@ -582,6 +576,15 @@ export const Sensitivity: React.FC<SceneProps> = ({start}) => {
       </Text>
       <Text x={124} y={220} size={28} tone="faint" draw={p(221.4)}>
         sensitive parts get more bits
+      </Text>
+
+      <Rect x={360} y={286} w={900} h={46} fill={COLORS.sage} stroke={COLORS.ink} strokeWidth={2.6} draw={p(221.5)} seed={2895} opacity={0.85} />
+      <Rect x={1260} y={286} w={300} h={46} fill={COLORS.red} stroke={COLORS.ink} strokeWidth={2.6} draw={p(221.6)} seed={2896} opacity={0.85} />
+      <Text x={760} y={246} size={26} tone="sage" draw={p(221.7)}>
+        4-bit
+      </Text>
+      <Text x={1360} y={246} size={26} tone="red" draw={p(221.8)}>
+        2-bit
       </Text>
 
       <Path d="M 300 450 L 300 820 L 1120 820 L 1120 450 Z" fill="#fff" stroke={COLORS.ink} strokeWidth={3.4} draw={p(226.5)} seed={2901} />
@@ -739,15 +742,15 @@ export const Catch: React.FC<SceneProps> = ({start}) => {
         rounding changes the model
       </Text>
 
-      <Rect x={200} y={380} w={330} h={310} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3.2} draw={p(261.8)} seed={3201} />
-      <Text x={228} y={408} size={34} draw={p(262.0)}>
+      <Rect x={200} y={380} w={330} h={310} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3.2} draw={p(260.7)} seed={3201} />
+      <Text x={228} y={408} size={34} draw={p(260.8)}>
         trained model
       </Text>
-      <Text x={228} y={468} size={70} font="title" draw={p(262.1)}>
+      <Text x={228} y={468} size={70} font="title" draw={p(260.9)}>
         16-bit
       </Text>
-      <Check x={228} y={590} size={34} draw={p(262.4)} />
-      <Text x={276} y={582} size={25} tone="sage" draw={p(262.5)}>
+      <Check x={228} y={590} size={34} draw={p(261.1)} />
+      <Text x={276} y={582} size={25} tone="sage" draw={p(261.2)}>
         finished learning
       </Text>
 
@@ -840,7 +843,7 @@ export const CrayonTest: React.FC<SceneProps> = ({start}) => {
       </Text>
 
       {/* left panel */}
-      <Rect x={160} y={240} w={720} h={650} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(296.0)} seed={3401} />
+      <Rect x={160} y={240} w={720} h={650} fill="#fff" stroke={COLORS.ink} strokeWidth={3.2} draw={p(295.0)} seed={3401} />
       <Text x={190} y={268} size={32} draw={p(298.2)}>
         practice with 1,000
       </Text>
@@ -890,18 +893,18 @@ export const DevLesson: React.FC<SceneProps> = ({start}) => {
         don't shrink a finished model and hope
       </Text>
 
-      <Text x={160} y={360} size={34} tone="red" draw={p(309.9)}>
+      <Text x={160} y={360} size={34} tone="red" draw={p(308.2)}>
         shrink later
       </Text>
-      <Rect x={410} y={320} w={260} h={190} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3} draw={p(310.0)} seed={3501} />
-      <Text x={410} y={396} size={38} align="center" width={260} draw={p(310.1)}>
+      <Rect x={410} y={320} w={260} h={190} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={3} draw={p(308.4)} seed={3501} />
+      <Text x={410} y={396} size={38} align="center" width={260} draw={p(308.5)}>
         full model
       </Text>
-      <Arrow x1={720} y1={415} x2={1110} y2={415} color={COLORS.red} width={3} draw={p(310.2)} seed={3502} />
-      <Rect x={1120} y={320} w={260} h={190} fill="#fff" stroke={COLORS.red} strokeWidth={3.2} draw={p(310.4)} seed={3503} />
-      <Path d="M 1180 360 L 1230 410 L 1190 450 L 1240 500" stroke={COLORS.red} strokeWidth={3} draw={p(310.6)} seed={3504} />
-      <Path d="M 1300 360 L 1260 410 L 1310 450 L 1260 500" stroke={COLORS.red} strokeWidth={3} draw={p(310.7)} seed={3505} />
-      <Cross x={1250} y={550} size={40} draw={p(311.0)} />
+      <Arrow x1={720} y1={415} x2={1110} y2={415} color={COLORS.red} width={3} draw={p(308.7)} seed={3502} />
+      <Rect x={1120} y={320} w={260} h={190} fill="#fff" stroke={COLORS.red} strokeWidth={3.2} draw={p(309.0)} seed={3503} />
+      <Path d="M 1180 360 L 1230 410 L 1190 450 L 1240 500" stroke={COLORS.red} strokeWidth={3} draw={p(309.2)} seed={3504} />
+      <Path d="M 1300 360 L 1260 410 L 1310 450 L 1260 500" stroke={COLORS.red} strokeWidth={3} draw={p(309.3)} seed={3505} />
+      <Cross x={1250} y={550} size={40} draw={p(309.6)} />
 
       <Text x={160} y={700} size={34} tone="sage" draw={p(312.6)}>
         train small

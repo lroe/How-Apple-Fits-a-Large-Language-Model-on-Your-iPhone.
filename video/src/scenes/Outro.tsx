@@ -5,7 +5,7 @@ import {Bean, Check, Chip, Cloud, Cross, Hat, Notebook, Phone, Text} from '../co
 import {GroundLine, Stage, useSceneTime, type SceneProps} from '../components/Stage';
 
 const pF = (t: number, start: number, cue: number, dur = 0.55) =>
-  progress(t, cue, dur, easeOut);
+  progress(t, cue <= start + 1.6 ? cue - 1.6 : cue, dur, easeOut);
 
 const Magnifier: React.FC<{x: number; y: number; r?: number; draw?: number; color?: string; angle?: number}> = ({
   x,
@@ -64,8 +64,8 @@ export const SixThings: React.FC<SceneProps> = ({start}) => {
         const isActive = active === i;
         return (
           <React.Fragment key={c.n}>
-            <Rect x={x} y={y} w={480} h={270} fill="#fff" stroke={isActive ? COLORS.sage : COLORS.ink} strokeWidth={isActive ? 4 : 2.6} draw={p(661.5 + i * 0.04)} seed={7100 + i} opacity={d > 0 ? 1 : 0.35} />
-            <Text x={x + 26} y={y + 18} size={30} tone={isActive ? 'sage' : 'faint'} draw={p(661.5 + i * 0.04)}>
+            <Rect x={x} y={y} w={480} h={270} fill="#fff" stroke={isActive ? COLORS.sage : COLORS.ink} strokeWidth={isActive ? 4 : 2.6} draw={p(659.0 + i * 0.04)} seed={7100 + i} opacity={d > 0 ? 1 : 0.35} />
+            <Text x={x + 26} y={y + 18} size={30} tone={isActive ? 'sage' : 'faint'} draw={p(659.0 + i * 0.04)}>
               {c.n}
             </Text>
             <Text x={x + 26} y={y + 62} size={36} draw={d} width={370}>
@@ -132,9 +132,9 @@ export const WrapUp: React.FC<SceneProps> = ({start}) => {
           just waste, cut away
         </Text>
 
-        <Phone x={220} y={300} w={340} h={560} draw={p(706.0)} screenFill="#FBF7ED" />
-        <Circle cx={440} cy={520} d={90} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={2.6} draw={p(706.2)} seed={7201} />
-        <Text x={440} y={506} size={30} align="center" width={90} draw={p(706.3)} style={{left: 395}}>
+        <Phone x={220} y={300} w={340} h={560} draw={p(704.9)} screenFill="#FBF7ED" />
+        <Circle cx={440} cy={520} d={90} fill={COLORS.sand} stroke={COLORS.ink} strokeWidth={2.6} draw={p(705.0)} seed={7201} />
+        <Text x={440} y={506} size={30} align="center" width={90} draw={p(705.1)} style={{left: 395}}>
           lean
         </Text>
 
@@ -143,8 +143,8 @@ export const WrapUp: React.FC<SceneProps> = ({start}) => {
           spot the waste
         </Text>
 
-        <Rect x={980} y={300} w={400} h={110} fill="#fff" stroke={COLORS.ink} strokeWidth={3} draw={p(706.5)} seed={7210} />
-        <Text x={980} y={326} size={30} align="center" width={400} draw={p(706.6)} style={{left: 980}}>
+        <Rect x={980} y={300} w={400} h={110} fill="#fff" stroke={COLORS.ink} strokeWidth={3} draw={p(705.5)} seed={7210} />
+        <Text x={980} y={326} size={30} align="center" width={400} draw={p(705.6)} style={{left: 980}}>
           one big secret
         </Text>
         <Cross x={1180} y={356} size={58} draw={p(708.4)} />

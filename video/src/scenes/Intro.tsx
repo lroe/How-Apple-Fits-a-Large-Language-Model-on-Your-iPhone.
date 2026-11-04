@@ -5,7 +5,7 @@ import {Bean, Check, Phone, Text} from '../components/primitives';
 import {GroundLine, Stage, useSceneTime, type SceneProps} from '../components/Stage';
 
 const pF = (t: number, start: number, cue: number, dur = 0.55) =>
-  progress(t, cue, dur, easeOut);
+  progress(t, cue <= start + 1.6 ? cue - 1.6 : cue, dur, easeOut);
 
 const Token: React.FC<{
   x: number;
@@ -370,6 +370,13 @@ export const Tokens: React.FC<SceneProps> = ({start}) => {
       <Text x={124} y={208} size={27} tone="faint" draw={p(43.6)}>
         the model reads in pieces
       </Text>
+
+      <div style={{opacity: 1 - p(43.7, 0.4)}}>
+        <Rect x={240} y={240} w={560} h={180} fill="#fff" stroke={COLORS.ink} strokeWidth={2.6} draw={p(41.7, 0.3)} seed={790} />
+        {Array.from({length: 5}).map((_, i) => (
+          <Line key={i} x1={280} y1={284 + i * 26} x2={280 + (i === 1 ? 360 : 460)} y2={282 + i * 26} stroke={COLORS.ink} strokeWidth={2.1} draw={p(41.75 + i * 0.03, 0.25)} seed={791 + i} opacity={0.55} />
+        ))}
+      </div>
 
       <Text x={150} y={270} size={30} tone="faint" draw={p(44.0)}>
         in
