@@ -288,7 +288,7 @@ export const HowQuestion: React.FC<SceneProps> = ({start}) => {
       <Phone x={760} y={300} w={250} h={460} draw={p(26.4, 0.9)} screenFill="#FBF7ED" />
       <DotGrid x={800} y={380} cols={5} rows={5} gap={26} r={3} progress={p(26.5)} opacity={0.6} />
       <Bean x={600} y={450} h={170} draw={p(26.4)} face="worried" arms="out" />
-      <Text x={1090} y={310} size={190} font="title" draw={p(27.1, 0.7)}>
+      <Text x={1090} y={310} size={170} font="label" draw={p(27.1, 0.7)}>
         How?
       </Text>
       <Line x1={1110} y1={560} x2={1110 + 340 * p(27.4)} y2={552} stroke={COLORS.red} strokeWidth={4} draw={p(27.4)} seed={701} />

@@ -26,24 +26,15 @@ const FontLoader: React.FC = () => {
   return null;
 };
 
-const OVERLAP = 8;
-
 const SceneSlot: React.FC<{
   scene: (typeof SCENES)[number];
   localFrame: number;
-  durationInFrames: number;
 }> = ({scene, localFrame}) => {
-  const reveal =
-    scene.start === 0
-      ? 1
-      : Math.max(0, Math.min(1, localFrame / OVERLAP));
+  const opacity =
+    scene.start === 0 ? 1 : Math.max(0, Math.min(1, localFrame / 4));
   const Scene = scene.component;
   return (
-    <AbsoluteFill
-      style={{
-        clipPath: `inset(0 ${100 - reveal * 100}% 0 0)`,
-      }}
-    >
+    <AbsoluteFill style={{opacity}}>
       <Scene start={scene.start} end={scene.end} />
     </AbsoluteFill>
   );
@@ -77,15 +68,12 @@ export const Video: React.FC = () => {
           Math.round((scene.end - scene.start) * FPS),
         );
         const localFrame = frame - from;
-        if (localFrame < 0 || localFrame >= durationInFrames + OVERLAP) {
-          return null;
-        }
+        if (localFrame < 0 || localFrame >= durationInFrames) return null;
         return (
           <SceneSlot
             key={scene.id}
             scene={scene}
             localFrame={localFrame}
-            durationInFrames={durationInFrames}
           />
         );
       })}

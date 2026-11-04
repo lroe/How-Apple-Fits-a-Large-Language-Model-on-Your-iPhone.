@@ -4,11 +4,15 @@
   "private": true,
   "scripts": {
     "studio": "remotion studio src/index.ts --port 3000",
+    "render:4k": "node render-4k.mjs",
+    "render:4k:test": "node render-4k.mjs --test",
     "still": "remotion still src/index.ts AppleExplainer",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@remotion/cli": "4.0.540",
+    "@remotion/bundler": "4.0.540",
+    "@remotion/renderer": "4.0.540",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "remotion": "4.0.540",

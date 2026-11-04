@@ -80,7 +80,7 @@
 - Arrow tips are computed from endpoint geometry; arrows point to object edges, not labels.
 - Completed frames hold 1.5–3 s wherever narration allows; long scenes stage elements one-by-one.
 - No top-left headings/subheadings: narration + figure labels carry the scene.
-- Transitions wipe over the previous frame; no white gap and no grey cross-fade.
+- Transitions use a short 4-frame fade through white; next visuals are pre-rolled so the gap is a blink.
 - Opening visuals are pre-rolled so scene start + 0.4 s is never blank.
 - Pacing pass: every final reveal now holds at least ~2 s, with dense scenes held 2.4–5 s.
 - Word timings are stored in `video/src/data/words.json` for frame-accurate cueing.

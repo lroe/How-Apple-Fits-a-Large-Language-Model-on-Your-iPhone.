@@ -47,10 +47,10 @@ Generates storyboards, timing sheets, visual scripts, and production prompts mat
   * Never cut on the same word that completes a diagram.
   * If the final narration line is only a hand-off ("let's run the numbers", "adapters fix that"), move that copy into the next scene instead of leaving it 0.1–0.8 s on screen.
   * Dense scenes (multi-part diagrams, math, architecture) need the **final state held 2.5–3.5 s**. Simplify the last beat rather than rushing the cut.
-* **No empty cuts (hard rule):**
-  * Never cut to a completely blank white frame. The next scene must open on a visual, not on a title card or an empty canvas.
-  * Use a clean left-to-right wipe that reveals the next scene over the still-visible previous frame. Do not fade both scenes toward white; that produces a grey/blank gap.
-  * If a scene truly needs a chapter card, keep the previous diagram or a motif underneath it so the screen is never empty.
+* **Transitions = short fade through white (hard rule):**
+  * Use a **4–6 frame** fade through white at 30 fps (0.13–0.2 s). Do not use a left-to-right wipe; it makes the cut feel mechanical.
+  * Pre-roll the next scene's first visual so the white gap is only a blink, never a blank scene. Never expose an empty canvas for more than ~0.2 s.
+  * If a scene truly needs a chapter card, keep a motif on screen so the card is never an empty text slide.
   * Verify with a still at **scene start + 0.4 s**. If it is more than ~80% empty, move the first visual earlier.
 
 ---
@@ -60,7 +60,7 @@ Generates storyboards, timing sheets, visual scripts, and production prompts mat
 * **Negative Space:** Keep 60%–80% of the canvas empty at all times.
 * **Groundline / Baseline:** Anchor figures and buildings to an uninterrupted bottom horizontal guideline.
 * **Focal Point Isolation:** Keep 1 active focus zone per beat (left, center, or right). Do not animate multiple unrelated quadrants simultaneously.
-* **Transitions:** Clean wipe, lateral pan along the groundline, or sudden clear-to-white. Avoid flashy camera zooms or rotations.
+* **Transitions:** Short fade through white (4–6 frames), lateral pan along the groundline, or sudden clear-to-white. No left-to-right wipes, flashy zooms, or rotations.
 * keep font size big
 
 ---

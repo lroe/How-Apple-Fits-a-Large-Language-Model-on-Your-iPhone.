@@ -44,12 +44,27 @@ out/preview-sheet.png    57-frame overview contact sheet
 
 The production timing sheet is at `../storyboard.md`.
 
+## 4K render (Colab)
+
+Open `colab_render.ipynb` in Colab. It clones the private repo with a GitHub token and runs `render-4k.mjs`.
+
+- Output: **3840×2160**, 30 fps, H.264 CRF 16, AAC 320 kbps
+- Every completed frame prints as `[frame 00000/21965] ... %`
+- A 12-frame 4K test runs first
+- Rendering is CPU-heavy; expect **2–6 hours** on a free Colab CPU runtime and less on High-RAM / more vCPUs
+
+Command used under the hood:
+
+```bash
+CONCURRENCY=4 node render-4k.mjs
+```
+
 ## Reading pass
 
 - Removed the top-left eyebrow/title/subtitle from every content scene. The narration and the diagram labels carry the scene; no more “read top-left, then look center” eye movement.
 - Chapter cards keep only the big chapter number, one title, and a motif. Subtitles and the footer line are gone.
-- Scene transitions now use a fast left-to-right wipe that reveals the next diagram over the previous frame. No white gaps and no grey cross-fade.
-- Opening visuals are pre-rolled so they are already drawn when the wipe completes.
+- Scene transitions use a short **fade through white** (4 frames), with the next diagram already pre-rolled underneath. No left-to-right wipe.
+- Opening visuals are pre-rolled so they are already drawn when the fade completes.
 
 ## Pacing pass
 
