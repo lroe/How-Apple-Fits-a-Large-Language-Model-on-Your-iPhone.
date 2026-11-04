@@ -6,11 +6,11 @@
 
 **Canvas:** 1920×1080, 30 fps  
 
-**Style:** white paper, charcoal linework, crimson/sage accents, sand fills, Caveat + Patrick Hand. Secondary text is dark charcoal (`#3D3A35`), never grey.  
+**Style:** near-black canvas (`#0B0D10`), warm off-white linework (`#F4EFE5`), flat coral/teal/amber/blue/violet accents, Caveat + Patrick Hand. Secondary text is warm parchment (`#D6CEC0`), never mid-grey. Content scenes carry no top headings; the diagram and narration do the work.  
 
 **Sync source:** word-level Whisper timestamps, reconciled against `audio.srt`.  
 
-**Rule:** no full narration on screen; every visual/arrow is anchored to a spoken beat.  
+**Rule:** no full narration on screen; every visual/arrow is anchored to a spoken beat. One central illustration per scene, with labels on the objects they describe. Camera moves and 2D rigging are used only when the beat needs them.  
 
 
 | # | Time | Scene | Narration cue | Visual | On-screen emphasis |
@@ -80,7 +80,7 @@
 - Arrow tips are computed from endpoint geometry; arrows point to object edges, not labels.
 - Completed frames hold 1.5–3 s wherever narration allows; long scenes stage elements one-by-one.
 - No top-left headings/subheadings: narration + figure labels carry the scene.
-- Transitions use a short 4-frame fade through white; next visuals are pre-rolled so the gap is a blink.
+- Transitions use a short 4-frame fade through black; next visuals are pre-rolled so the gap is a blink.
 - Opening visuals are pre-rolled so scene start + 0.4 s is never blank.
 - Pacing pass: every final reveal now holds at least ~2 s, with dense scenes held 2.4–5 s.
 - Word timings are stored in `video/src/data/words.json` for frame-accurate cueing.
@@ -93,4 +93,4 @@ npm install
 npm run studio
 ```
 
-Open `http://localhost:3000`. Still-frame QA renders are in `video/out/qa/`.
+Open `http://localhost:3000` and select `AppleExplainerDark`. Dark QA stills are in `video/out/dark-qa/`; the overview is `video/out/dark-preview-sheet.png`.

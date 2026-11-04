@@ -36,6 +36,12 @@ Generates storyboards, timing sheets, visual scripts, and production prompts mat
   * Tasks/Jobs: Circular clusters, dotted outlines fading in/out.
   * Macroeconomics: Balance scales, 2D line graphs, dot grids/arrays (e.g., 1,000 dots).
   * Institutions: Basic geometric building line-art, doorframes representing access/vacancies.
+* **2D vector rigging (when a scene needs articulated motion):**
+  * Build a simple hierarchy: parent joint → limb → child joint → hand/object. Pivot each part at its joint, not at the canvas origin.
+  * Use rigging only for things that actually move — arms, levers, doors, phone tilts, crane arms, gears. Static diagrams stay as plain shapes.
+  * Keep rigs small: 2–5 joints is enough. Animate shoulder/elbow or base/tip with eased sine motion; no full inverse kinematics required.
+  * The hand or tool must stay attached to the end of the chain. If the parent moves, the child follows automatically.
+  * Rigging should clarify a physical action (reaching, carrying, pointing, lifting), not add idle motion.
 
 ---
 
@@ -66,6 +72,7 @@ Generates storyboards, timing sheets, visual scripts, and production prompts mat
 * **Groundline / Baseline:** Anchor figures and buildings to an uninterrupted bottom horizontal guideline.
 * **Focal Point Isolation:** Keep 1 active focus zone per beat (left, center, or right). Do not animate multiple unrelated quadrants simultaneously.
 * **Transitions:** Short fade through white (4–6 frames), lateral pan along the groundline, or sudden clear-to-white. No left-to-right wipes, flashy zooms, or rotations.
+* **Camera moves (selective, not default):** Use a virtual camera only when the beat needs emphasis: a slow push-in for a reveal, a pull-back to show scale, a lateral pan to compare two things, or a slight tilt for energy. One move per scene, motivated by the narration. Keep it slow (1.02–1.08× over 2–5 s), hold still while the viewer is reading dense labels, and return to a neutral frame before the cut. Never zoom so far that labels drop below the type-scale floors.
 * **Text is a primary visual, not a caption:** Labels should feel like part of the diagram, not fine print underneath it. Size them to be read at phone size, not just on a desktop monitor.
 * **Use the space you have:** When a scene has only one or two elements, scale the drawing and its labels up. A small object floating in a large empty canvas is not minimalism; it is wasted space. Let the active composition occupy roughly 60–75% of the canvas width.
 * **Scale labels to their anchor:** A short label under a shape should be roughly **20–25% of that shape's height** (subject to the hard floor above) and should fill **60–80% of its available width band**. Do not leave a tiny word under a big object.

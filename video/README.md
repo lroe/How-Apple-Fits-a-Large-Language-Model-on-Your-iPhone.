@@ -1,8 +1,8 @@
-# Apple on-device LLM — Remotion preview
+# Apple on-device LLM — dark-mode Remotion preview
 
 Repo: https://github.com/lroe/How-Apple-Fits-a-Large-Language-Model-on-Your-iPhone.
 
-Minimalist hand-drawn explainer built from `audio.wav` (12:12.16) and `audio.srt`, with word-level Whisper timing.
+A 57-scene, 12:12 explainer built from `audio.wav` and word-level Whisper timing, remade from scratch with the dark-mode / flat-color direction in `../skill-dark.md`.
 
 ## Preview
 
@@ -12,41 +12,54 @@ npm install
 npm run studio
 ```
 
-Studio is currently served at **http://localhost:3000** (composition `AppleExplainer`).
+Open **http://localhost:3000** and select **`AppleExplainerDark`**. The original light cut is still available as `AppleExplainer` for comparison.
 
 - Canvas: 1920×1080
 - FPS: 30
 - Duration: 21,965 frames / 732.16 s
 - Audio: `public/audio.wav`
+- Transitions: 4-frame fade through black, next visual pre-rolled
 
-**No final video has been rendered.** Still frames only were rendered for layout QA.
+**No final video has been rendered.** Still frames only were rendered for preview and QA.
+
+## Preview stills
+
+```bash
+node render-dark-qa.mjs
+```
+
+This renders one final-state still per scene into `out/dark-qa/`. The 57-frame overview is `out/dark-preview-sheet.png`.
 
 ## Design rules
 
-- Pure white paper, charcoal ink (`#1A1A1A`), muted crimson (`#D9433B`), muted sage (`#3C8D75`), pale sand (`#EFE4CC`).
-- Caveat for display type; Patrick Hand for labels.
-- Secondary text is **dark charcoal `#3D3A35`**, never grey.
-- Word-level sync: every reveal uses an absolute cue from `src/data/words.json`; frame = seconds × 30.
-- Arrows are drawn with the arrowhead tip exactly at the target edge. Source/target anchors are explicit in scene code.
-- Layout zones are fixed; QA frames were rendered at the end of each scene to check collisions.
+- Near-black canvas (`#0B0D10`), warm off-white ink (`#F4EFE5`), never mid-grey text.
+- Five flat accents: coral, teal, amber, blue, violet. Max three accents per scene.
+- No gradients, glows, bloom, or drop shadows.
+- Big type: hero 120–220 px, primary labels 80–120 px, secondary 40–56 px.
+- Content scenes have no top-left/top-right headings. The narration and the diagram labels carry the scene.
+- One central illustration per scene; labels sit on the objects they describe.
+- Camera moves are selective: slow push-ins, pull-backs, and pans only where the beat needs emphasis.
+- 2D vector rigging is used for articulated motion (the chef/helper arm, the librarian’s reach); gears use hierarchical rotation.
 
 ## Files
 
 ```
-src/data/timeline.ts     57 scene definitions / exact time ranges
-src/data/words.json      2266 word timestamps
-src/scenes/              scene components grouped by chapter
-src/components/          Stage, ChapterCard, sketch primitives
-src/lib/rough.tsx        Rough.js path generation + arrow geometry
-out/qa/                  still-frame QA renders for every scene
-out/preview-sheet.png    57-frame overview contact sheet
+src/dark/theme.ts          dark palette, easing, camera helpers
+src/dark/ui.tsx            Stage, camera, text, panels, phone, chip, wall, rig
+src/dark/rough.tsx         Rough.js primitives for the dark theme
+src/dark/scenes/           new scene components grouped by chapter
+src/dark/timeline.ts       57 scene ranges for the dark cut
+src/dark/DarkVideo.tsx     audio, font loading, fade-through-black playback
+render-dark-qa.mjs         preview still renderer
+out/dark-qa/               final-state still for every scene
+out/dark-preview-sheet.png 57-frame overview contact sheet
 ```
 
 The production timing sheet is at `../storyboard.md`.
 
 ## 1080p render (Colab)
 
-Open `colab_render.ipynb` in Colab. The repo is public, so it clones directly with **no token** and runs `render.mjs`.
+Open `colab_render.ipynb` in Colab. The repo is public, so it clones directly with **no token** and runs `render.mjs`, which now targets **`AppleExplainerDark`**.
 
 - Output: **1920×1080**, 30 fps, H.264 CRF 18, AAC 320 kbps
 - Every completed frame prints as `[frame 00000/21965] ... %`
@@ -60,39 +73,11 @@ Command used under the hood:
 CONCURRENCY=4 node render.mjs
 ```
 
-## Reading pass
-
-- Removed the top-left eyebrow/title/subtitle from every content scene. The narration and the diagram labels carry the scene; no more “read top-left, then look center” eye movement.
-- Chapter cards keep only the big chapter number, one title, and a motif. Subtitles and the footer line are gone.
-- Scene transitions use a short **fade through white** (4 frames), with the next diagram already pre-rolled underneath. No left-to-right wipe.
-- Opening visuals are pre-rolled so they are already drawn when the fade completes.
-
-## Pacing pass
-
-A second timing pass gives the densest scenes more processing time without changing the audio:
-
-- `Mixed sizes`: removed the hand-off line; the 3.7 average now holds ~2.7 s.
-- `Split it, don't copy it`: "no extra copies" appears ~1.5 s earlier, holding ~2.4 s.
-- `Dense vs sparse`: extended into the natural pause before "hospital"; final state holds ~2.4 s.
-- `The basement library`: extended into the next pause; desk and final books hold ~1.9 s.
-- `Wall two: speed`: clock/waiting appears earlier; holds ~1.9 s.
-- `Look it up`: KV notebook appears earlier; final lookup holds ~3 s.
-- `Paint by numbers`: final "same idea, with weights" moved earlier; holds ~2.4 s.
-- `Google Cloud joins in`: cloud labels moved earlier; hold ~2.1 s.
-- `New in 2026`: Core Advanced card moves with "along with"; holds ~3.3 s.
-- `Trick 1`: 2-bit card/label moved earlier; quantization holds ~2 s.
-- `Train for the size`: final check moved earlier; holds ~2.2 s.
-- `One phone, many features`: removed the hand-off line so the red "three copies" frame holds ~5.3 s.
-- `Match power to the job`: extended ~0.3 s into the next pause; final adaptive frame holds ~2 s.
-- `Phone first, cloud second`: now runs through the PCC hand-off; hard-request arrow holds ~5.4 s.
-- `A hospital of experts`: starts at the natural pause so the sparse comparison holds.
-
-
 ## Optional final render
 
 Only if you explicitly want the MP4:
 
 ```bash
-npx remotion render src/index.ts AppleExplainer out/apple-explainer.mp4 \
+npx remotion render src/index.ts AppleExplainerDark out/apple-explainer-dark.mp4 \
   --browser-executable=/usr/bin/google-chrome
 ```

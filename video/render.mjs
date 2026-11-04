@@ -9,9 +9,10 @@ const is4k = process.argv.includes('--4k');
 const testFrames = 12;
 
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
+const compositionId = process.env.COMPOSITION || 'AppleExplainerDark';
 const composition = await selectComposition({
   serveUrl,
-  id: 'AppleExplainer',
+  id: compositionId,
 });
 
 const total = composition.durationInFrames;
@@ -19,7 +20,7 @@ const label = is4k ? '4k' : '1080p';
 const scale = is4k ? 2 : 1;
 const crf = is4k ? 16 : 18;
 const outputLocation = path.resolve(
-  test ? `out/test-${label}.mp4` : `out/apple-explainer-${label}.mp4`,
+  test ? `out/test-dark-${label}.mp4` : `out/apple-explainer-dark-${label}.mp4`,
 );
 const concurrency = Math.max(
   1,
